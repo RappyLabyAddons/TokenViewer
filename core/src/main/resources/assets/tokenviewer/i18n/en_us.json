@@ -5,6 +5,11 @@
             "enabled": {
                 "name": "Enabled"
             }
+        },
+        "component": {
+            "copy": "Copy",
+            "null": "Empty",
+            "hover": "Click to copy"
         }
     }
 }
