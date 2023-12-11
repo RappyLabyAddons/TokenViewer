@@ -1,0 +1,10 @@
+{
+    "tokenviewer": {
+        "settings": {
+            "name": "Token Viewer",
+            "enabled": {
+                "name": "Enabled"
+            }
+        }
+    }
+}
