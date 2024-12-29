@@ -6,21 +6,10 @@ plugins {
 val versions = providers.gradleProperty("net.labymod.minecraft-versions").get().split(";")
 
 group = "org.example"
-version = providers.environmentVariable("VERSION").getOrElse("1.0.0")
+version = providers.environmentVariable("VERSION").getOrElse("1.0.1")
 
 labyMod {
-    defaultPackageName = "com.rappytv.tokenviewer" //change this to your main package name (used by all modules)
-
-    minecraft {
-        registerVersion(versions.toTypedArray()) {
-            runs {
-                getByName("client") {
-                    // When the property is set to true, you can log in with a Minecraft account
-                    // devLogin = true
-                }
-            }
-        }
-    }
+    defaultPackageName = "com.rappytv.tokenviewer"
 
     addonInfo {
         namespace = "tokenviewer"
@@ -29,6 +18,16 @@ labyMod {
         description = "Easily access your Minecraft Session and LabyConnect token"
         minecraftVersion = "*"
         version = rootProject.version.toString()
+    }
+
+    minecraft {
+        registerVersion(versions.toTypedArray()) {
+            runs {
+                getByName("client") {
+                    devLogin = true
+                }
+            }
+        }
     }
 }
 
